@@ -1,0 +1,78 @@
+ <style>
+    {`
+      /* Card Glow */
+      @keyframes glow-card {
+        0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
+        50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
+      }
+      .glow-card { animation: glow-card 2.5s ease-in-out infinite; }
+
+      /* Input Glow */
+      @keyframes glow-input {
+        0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.4);}
+        50%{box-shadow:0 0 20px rgba(14,165,233,0.7);}
+      }
+      .glow-input { animation: glow-input 3s ease-in-out infinite; }
+
+      /* Button Glow */
+      @keyframes glow-button {
+        0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
+        50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
+      }
+      .glow-button { animation: glow-button 2s ease-in-out infinite; }
+
+      /* Individual small element glow */
+      @keyframes glow-element {
+        0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.3);}
+        50%{box-shadow:0 0 20px rgba(14,165,233,0.6);}
+      }
+      .glow-element { animation: glow-element 2.5s ease-in-out infinite; }
+    `}
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+    {`
+      /* Card Glow - Neon Gradient Style */
+@keyframes glow-card {
+  0%,100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 128, 255, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 50px rgba(0, 128, 255, 0.6); }
+}
+.glow-card { animation: glow-card 2.5s ease-in-out infinite; }
+
+/* Input Glow - Cyan to Purple Neon */
+@keyframes glow-input {
+  0%,100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 15px rgba(128, 0, 255, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 25px rgba(128, 0, 255, 0.6); }
+}
+.glow-input { animation: glow-input 3s ease-in-out infinite; }
+
+/* Button Glow - Blue to Pink Neon */
+@keyframes glow-button {
+  0%,100% { box-shadow: 0 0 20px rgba(0, 200, 255, 0.6), 0 0 30px rgba(255, 0, 200, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(0, 200, 255, 0.8), 0 0 50px rgba(255, 0, 200, 0.6); }
+}
+.glow-button { animation: glow-button 2s ease-in-out infinite; }
+
+/* Small Elements Glow - Soft Cyan-Purple */
+@keyframes glow-element {
+  0%,100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 15px rgba(128, 0, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 25px rgba(128, 0, 255, 0.5); }
+}
+.glow-element { animation: glow-element 2.5s ease-in-out infinite; }
+
+    `}
+  </style>
