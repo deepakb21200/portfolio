@@ -5,7 +5,7 @@
   align-items: center;
   padding: 1.8rem 10rem;
 
-  background-color: rgba(33, 33, 33, 0.31); /* #21212150 ka equivalent */
+  background-color: rgba(33, 33, 33, 0.31); 
   
   backdrop-filter: blur(6px);
 
@@ -32,7 +32,7 @@
 
 
 
-/* Default link styles */
+ 
 nav a {
   color: #FFFF;
   padding: 0.6rem;
@@ -42,12 +42,12 @@ nav a {
   transition: filter 0.25s;
 }
 
-/* a tag with class "button" */
+ 
 a.button {
   padding: 0.6rem 2rem;
 }
 
-/* hover effect */
+ 
 a:hover {
   filter: brightness(0.6);
 }
@@ -116,53 +116,7 @@ label {
   }
 
 
-/* nav container padding */
-/* menu block display */
- /* nav styles */
-   /* nav a tag with class button */
-     /* nav active state */
-  /* @media (max-width: 960px) {
-  
-  nav {
-    padding: 1.8rem 3rem;
-  }
-
-  
-  .menu {
-    display: block;
-  }
-
  
-  nav {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    transition: opacity 0.25s;
-    background-color: #23ce6b;  
-  }
-
-
-  nav a.button {
-    background-color: #E31F71;
-  }
-
-
-  nav.active {
-    opacity: 1;
-    visibility: visible;
-  }
-} */
-
 
 
 @keyframes elasticBounce {
@@ -202,3 +156,7 @@ label {
 .header-text {
   font-size: 16px !important;
 }
+
+ 
+
+

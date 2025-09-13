@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import { Router } from 'react-router-dom'
+ 
 import "./header.css"
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { Link, useLocation } from "react-router-dom";
@@ -72,7 +72,7 @@ function Header() {
   
 
 //  bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x
-
+// sgf
 
     <header className=" fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none  " >
       <div className="  deep  md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
@@ -135,3 +135,75 @@ function Header() {
 }
 
 export default Header
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import { Link, useLocation } from "react-router-dom";
+// import { FaHome, FaUser, FaBriefcase, FaEnvelope, FaFileAlt, FaBars } from "react-icons/fa";
+// import "./header.css";
+
+// function Header() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const location = useLocation();
+//   const [activeLink, setActiveLink] = useState(() => {
+//     const path = location.pathname.substring(1) || "home";
+//     return path;
+//   });
+
+//   const navLinks = [
+//     { id: "home", icon: FaHome, text: "Home", path: "/" },
+//     { id: "about", icon: FaUser, text: "About", path: "/about" },
+//     { id: "work", icon: FaBriefcase, text: "Work", path: "/work" },
+//     { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
+//     { id: "resume", icon: FaFileAlt, text: "Resume", path: "/resume" },
+//   ];
+
+//   return (
+//     <header className="header-wrapper">
+//       <div className="header-inner">
+//         <nav className="header-nav">
+//           {/* Mobile Header */}
+//           <div className="mobile-header">
+//             <Link to="/" className="mobile-logo">Portfolio</Link>
+//             <button
+//               onClick={() => setIsMenuOpen(!isMenuOpen)}
+//               className="mobile-menu-button"
+//             >
+//               <FaBars />
+//             </button>
+//           </div>
+
+//           {/* Navigation Links */}
+//           <div className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+//             {navLinks.map(({ id, icon: Icon, text, path }) => (
+//               <Link
+//                 key={id}
+//                 to={path}
+//                 onClick={() => setActiveLink(id)}
+//                 className={`nav-link ${activeLink === id ? "active" : ""}`}
+//               >
+//                 <Icon className="nav-icon" />
+//                 <span>{text}</span>
+//               </Link>
+//             ))}
+//           </div>
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// }
+
+// export default Header;
+
+
+ 

@@ -1,6 +1,6 @@
- 
+/*  
 
-/* start */
+ 
 
 .projects {
   display: grid;
@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-/* Individual Project Card */
+ 
 .project {
   padding: 1.5rem 1rem;
   background-color: #2b2b2b;
@@ -28,7 +28,7 @@
   background-color: #E31F71;
 }
 
-/* Project Header */
+ 
 .project header {
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   width: 2.2rem;
 }
 
-/* Project Body */
+ 
 .project h3 {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
@@ -70,7 +70,7 @@
   color: #23ce6b;
 }
 
-/* Project Footer */
+ 
 .project footer {
   margin-top: auto;
 }
@@ -88,9 +88,7 @@ h2{
   font-size: 2.5rem;
 }
 
-/* ---------------------- RESPONSIVE ---------------------- */
-
-/* Large Desktops ≥1200px */
+ 
 @media (min-width: 1200px) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
@@ -99,7 +97,7 @@ h2{
   .project p { font-size: 0.8rem; }
 }
 
-/* Laptops 1024px–1199px */
+ 
 @media (max-width: 1199px) and (min-width: 1024px) {
   .projects {
     grid-template-columns: repeat(2, 1fr);
@@ -108,7 +106,7 @@ h2{
   .project p { font-size: 1rem; }
 }
 
-/* Tablets 768px–1023px */
+ 
 @media (max-width: 1023px) and (min-width: 768px) {
   .projects {
     grid-template-columns: repeat(2, 1fr);
@@ -116,8 +114,7 @@ h2{
   .project h3 { font-size: 1.4rem; }
   .project p { font-size: 0.95rem; }
 }
-
-/* Large Phones 480px–767px */
+ 
 @media (max-width: 767px) and (min-width: 480px) {
   .projects {
     grid-template-columns: 1fr;
@@ -128,7 +125,7 @@ h2{
   .project { padding: 1.2rem; }
 }
 
-/* Very Small Phones ≤360px */
+ 
 @media (max-width: 360px) {
   .projects {
     grid-template-columns: 1fr;
@@ -141,3 +138,230 @@ h2{
   .project .project-links a img { width: 1.8rem; }
 }
 
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+/* Projects Container */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+/* Project Card Base */
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  overflow: hidden;
+  /* box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7); */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    transition: transform 0.3s ease;
+  color: #fff;
+  height: 350px; /* Fixed height */
+}
+
+/* Hover Effect */
+.project:hover {
+  transform: translateY(-8px);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9); */
+}
+
+/* Header */
+.project header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Folder / GitHub Icon */
+.project header svg {
+  width: 40px;
+  height: 40px;
+  stroke: #00ffe0; /* Soft cyan for icons */
+ 
+  transition: stroke 0.3s ease;
+}
+
+.project header svg:hover {
+  stroke: #23ce6b; /* Highlight on hover */
+}
+
+/* Project Links */
+.project-links a img {
+  width: 26px;
+  height: 26px;
+    ;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.project-links a img:hover {
+  transform: scale(1.2);
+  filter: brightness(1) invert(0.5) sepia(0.3);
+}
+
+
+
+
+/* Body */
+.project .body {
+  padding: 1rem 1.2rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.project .body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project .body p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #e0e0e0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer */
+.project footer {
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+/* Tech List */
+.project .tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project .tech-list li {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.project .tech-list li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==== Unique Gradient Colors for Dark Background ==== */
+.project:nth-child(1) { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+ 
+ 
+/* .project:nth-child(1) { background: linear-gradient(135deg, #0f2027, #2c5364); }
+   */
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+/* .project:nth-child(1) { 
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
+}   */
+
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

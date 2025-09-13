@@ -6,10 +6,13 @@ import Animate from './Components/Animate'
 
 export default function App() {
   return (
-    <div>
+    <div className='w-full h-screen relative overflow-x-hidden'>
+ 
  
        <Header/>
        <Animate/>
+
+    
     </div>
   )
 }

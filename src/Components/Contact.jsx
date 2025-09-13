@@ -1,6 +1,33 @@
 import React, { useState } from "react";
 import { Send, Phone, MapPin, Mail } from "lucide-react";
 
+
+import { motion } from "framer-motion";
+
+
+
+
+
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -88,467 +115,333 @@ export default function Contact() {
 
   return (
  
-      // <section className="dk hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
-      //   <div className="container mx-auto">
-      //     <div className="grid lg:grid-cols-2 gap-12 items-center">
-      //       {/* Contact Info */}
-      //       <div className="space-y-8 border-[5px] border-red-500">
-      //         <div>
-      //           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-      //             Get in Touch
-      //           </h2>
-      //           <p className="text-gray-300 text-lg">
-      //             Have a question or want to work together? Drop us a message!
-      //           </p>
-      //         </div>
+   
 
-      //         <div className="space-y-6">
-      //           <div className="flex items-center space-x-4">
-      //             <div className="bg-purple-500/10 p-3 rounded-lg">
-      //               <Mail className="w-6 h-6 text-purple-400" />
-      //             </div>
-      //             <div>
-      //               <h3 className="font-semibold">Email</h3>
-      //               <p className="text-gray-400">olovajs@gmail.com</p>
-      //             </div>
-      //           </div>
-
-      //           <div className="flex items-center space-x-4">
-      //             <div className="bg-pink-500/10 p-3 rounded-lg">
-      //               <MapPin className="w-6 h-6 text-pink-400" />
-      //             </div>
-      //             <div>
-      //               <h3 className="font-semibold">Location</h3>
-      //               <p className="text-gray-400">Laxmipure, Natore 6400</p>
-      //             </div>
-      //           </div>
-      //         </div>
-      //       </div>
-
-      //       {/* Contact Form       bg-white/5 */}
-      //       <div className="backdrop-blur-lg p-8 rounded-2xl shadow-xl 
-      //       border-[5px] border-red-500">
-      //         <form onSubmit={handleSubmit} className="space-y-6">
-      //           <div className="grid grid-cols-1 gap-6">
-      //             <div>
-      //               <input
-      //                 type="text"
-      //                 placeholder="Your Name"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.name ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.name}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, name: e.target.value })
-      //                 }
-      //               />
-      //               {errors.name && (
-      //                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <input
-      //                 type="email"
-      //                 placeholder="Your Email"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.email ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.email}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, email: e.target.value })
-      //                 }
-      //               />
-      //               {errors.email && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.email}
-      //                 </p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <input
-      //                 type="text"
-      //                 placeholder="Subject"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.subject ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.subject}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, subject: e.target.value })
-      //                 }
-      //               />
-      //               {errors.subject && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.subject}
-      //                 </p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <textarea
-      //                 placeholder="Your Message"
-      //                 rows="4"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.message ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors resize-none`}
-      //                 value={formData.message}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, message: e.target.value })
-      //                 }
-      //               ></textarea>
-      //               {errors.message && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.message}
-      //                 </p>
-      //               )}
-      //             </div>
-      //           </div>
-
-      //           <button
-      //             type="submit"
-      //             className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
-      //           >
-      //             <span>Send Message</span>
-      //             <Send className="w-4 h-4" />
-      //           </button>
-      //         </form>
-
-      //         {/* Status Message */}
-      //         {status && (
-      //           <div
-      //             className={`mt-4 text-center ${
-      //               status.includes("success")
-      //                 ? "text-green-400"
-      //                 : "text-red-400"
-      //             }`}
-      //           >
-      //             <p>{status}</p>
-      //           </div>
-      //         )}
-      //       </div>
-      //     </div>
-      //   </div>
-        
-      // </section>
-
-      // <section className="dk hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
-      //   <div className="container mx-auto">
-      //     <div className="grid lg:grid-cols-2 gap-12 items-center">
-      //       {/* Contact Info */}
-      //       <div className="space-y-8 border-[5px] border-red-500">
-      //         <div>
-      //           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-      //             Get in Touch
-      //           </h2>
-      //           <p className="text-gray-300 text-lg">
-      //             Have a question or want to work together? Drop us a message!
-      //           </p>
-      //         </div>
-
-      //         <div className="space-y-6">
-      //           <div className="flex items-center space-x-4">
-      //             <div className="bg-purple-500/10 p-3 rounded-lg">
-      //               <Mail className="w-6 h-6 text-purple-400" />
-      //             </div>
-      //             <div>
-      //               <h3 className="font-semibold">Email</h3>
-      //               <p className="text-gray-400">olovajs@gmail.com</p>
-      //             </div>
-      //           </div>
-
-      //           <div className="flex items-center space-x-4">
-      //             <div className="bg-pink-500/10 p-3 rounded-lg">
-      //               <MapPin className="w-6 h-6 text-pink-400" />
-      //             </div>
-      //             <div>
-      //               <h3 className="font-semibold">Location</h3>
-      //               <p className="text-gray-400">Laxmipure, Natore 6400</p>
-      //             </div>
-      //           </div>
-      //         </div>
-      //       </div>
-
-      //       {/* Contact Form       bg-white/5 */}
-      //       <div className="backdrop-blur-lg p-8 rounded-2xl shadow-xl 
-      //       border-[5px] border-red-500">
-      //         <form onSubmit={handleSubmit} className="space-y-6">
-      //           <div className="grid grid-cols-1 gap-6">
-      //             <div>
-      //               <input
-      //                 type="text"
-      //                 placeholder="Your Name"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.name ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.name}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, name: e.target.value })
-      //                 }
-      //               />
-      //               {errors.name && (
-      //                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <input
-      //                 type="email"
-      //                 placeholder="Your Email"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.email ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.email}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, email: e.target.value })
-      //                 }
-      //               />
-      //               {errors.email && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.email}
-      //                 </p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <input
-      //                 type="text"
-      //                 placeholder="Subject"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.subject ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors`}
-      //                 value={formData.subject}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, subject: e.target.value })
-      //                 }
-      //               />
-      //               {errors.subject && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.subject}
-      //                 </p>
-      //               )}
-      //             </div>
-
-      //             <div>
-      //               <textarea
-      //                 placeholder="Your Message"
-      //                 rows="4"
-      //                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-      //                   errors.message ? "border-red-500" : "border-gray-700"
-      //                 } focus:border-blue-500 focus:outline-none transition-colors resize-none`}
-      //                 value={formData.message}
-      //                 onChange={(e) =>
-      //                   setFormData({ ...formData, message: e.target.value })
-      //                 }
-      //               ></textarea>
-      //               {errors.message && (
-      //                 <p className="text-red-500 text-sm mt-1">
-      //                   {errors.message}
-      //                 </p>
-      //               )}
-      //             </div>
-      //           </div>
-
-      //           <button
-      //             type="submit"
-      //             className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
-      //           >
-      //             <span>Send Message</span>
-      //             <Send className="w-4 h-4" />
-      //           </button>
-      //         </form>
-
-      //         {/* Status Message */}
-      //         {status && (
-      //           <div
-      //             className={`mt-4 text-center ${
-      //               status.includes("success")
-      //                 ? "text-green-400"
-      //                 : "text-red-400"
-      //             }`}
-      //           >
-      //             <p>{status}</p>
-      //           </div>
-      //         )}
-      //       </div>
-      //     </div>
-      //   </div>
-        
-      // </section>
-
-
-      <section className="dk hero min-h-screen flex items-center relative ">
-  <div className="container mx-auto">
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
+//       <section className="dk hero min-h-screen flex items-center relative ">
+//   <div className="container mx-auto">
+//     <div className="grid lg:grid-cols-2 gap-12 items-center">
       
-      {/* Contact Info */}
-      <div className="space-y-8  glow-card p-6 rounded-3xl shadow-xl">
-        <div>
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Get in Touch
-          </h2>
-          <p className="text-gray-300 text-lg">
-            Have a question or want to work together? Drop us a message!
-          </p>
-        </div>
+     
+//       <div className="space-y-8  glow-card p-6 rounded-3xl shadow-xl">
+//         <div>
+//           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+//             Get in Touch
+//           </h2>
+//           <p className="text-gray-300 text-lg">
+//             Have a question or want to work together? Drop us a message!
+//           </p>
+//         </div>
 
-        <div className="space-y-6">
-          <div className="flex items-center space-x-4">
-            <div className="bg-purple-500/10 p-3 rounded-lg glow-element">
-              <Mail className="w-6 h-6 text-purple-400" />
-            </div>
-            <div>
-              <h3 className="font-semibold">Email</h3>
-              <p className="text-gray-400">olovajs@gmail.com</p>
-            </div>
-          </div>
+//         <div className="space-y-6">
+//           <div className="flex items-center space-x-4">
+//             <div className="bg-purple-500/10 p-3 rounded-lg glow-element">
+//               <Mail className="w-6 h-6 text-purple-400" />
+//             </div>
+//             <div>
+//               <h3 className="font-semibold">Email</h3>
+//               <p className="text-gray-400">deepakbisht@gmail.com</p>
+//             </div>
+//           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="bg-pink-500/10 p-3 rounded-lg glow-element">
-              <MapPin className="w-6 h-6 text-pink-400" />
-            </div>
-            <div>
-              <h3 className="font-semibold">Location</h3>
-              <p className="text-gray-400">Laxmipure, Natore 6400</p>
-            </div>
-          </div>
-        </div>
-      </div>
+//           <div className="flex items-center space-x-4">
+//             <div className="bg-pink-500/10 p-3 rounded-lg glow-element">
+//               <MapPin className="w-6 h-6 text-pink-400" />
+//             </div>
+//             <div>
+//               <h3 className="font-semibold">Location</h3>
+//               <p className="text-gray-400">India</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
 
-      {/* Contact Form */}
-      <div className="backdrop-blur-lg p-8 rounded-2xl shadow-xl   glow-card">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6">
-            <div>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                  errors.name ? "border-red-500" : "border-gray-700"
-                } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-              )}
-            </div>
+      
+//       <div className="backdrop-blur-lg p-8 rounded-2xl shadow-xl   glow-card">
+//         <form onSubmit={handleSubmit} className="space-y-6">
+//           <div className="grid grid-cols-1 gap-6">
+//             <div>
+//               <input
+//                 type="text"
+//                 placeholder="Your Name"
+//                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+//                   errors.name ? "border-red-500" : "border-gray-700"
+//                 } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+//                 value={formData.name}
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, name: e.target.value })
+//                 }
+//               />
+//               {errors.name && (
+//                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+//               )}
+//             </div>
 
-            <div>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                  errors.email ? "border-red-500" : "border-gray-700"
-                } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
+//             <div>
+//               <input
+//                 type="email"
+//                 placeholder="Your Email"
+//                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+//                   errors.email ? "border-red-500" : "border-gray-700"
+//                 } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+//                 value={formData.email}
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, email: e.target.value })
+//                 }
+//               />
+//               {errors.email && (
+//                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+//               )}
+//             </div>
 
-            <div>
-              <input
-                type="text"
-                placeholder="Subject"
-                className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                  errors.subject ? "border-red-500" : "border-gray-700"
-                } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
-                value={formData.subject}
-                onChange={(e) =>
-                  setFormData({ ...formData, subject: e.target.value })
-                }
-              />
-              {errors.subject && (
-                <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
-              )}
-            </div>
+//             <div>
+//               <input
+//                 type="text"
+//                 placeholder="Subject"
+//                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+//                   errors.subject ? "border-red-500" : "border-gray-700"
+//                 } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+//                 value={formData.subject}
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, subject: e.target.value })
+//                 }
+//               />
+//               {errors.subject && (
+//                 <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+//               )}
+//             </div>
 
-            <div>
-              <textarea
-                placeholder="Your Message"
-                rows="4"
-                className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                  errors.message ? "border-red-500" : "border-gray-700"
-                } focus:border-blue-500 focus:outline-none transition-colors resize-none glow-input`}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-              ></textarea>
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
-            </div>
-          </div>
+//             <div>
+//               <textarea
+//                 placeholder="Your Message"
+//                 rows="4"
+//                 className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+//                   errors.message ? "border-red-500" : "border-gray-700"
+//                 } focus:border-blue-500 focus:outline-none transition-colors resize-none glow-input`}
+//                 value={formData.message}
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, message: e.target.value })
+//                 }
+//               ></textarea>
+//               {errors.message && (
+//                 <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+//               )}
+//             </div>
+//           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity glow-button"
-          >
-            <span>Send Message</span>
-            <Send className="w-4 h-4" />
-          </button>
-        </form>
+//           <button
+//             type="submit"
+//             className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity glow-button"
+//           >
+//             <span>Send Message</span>
+//             <Send className="w-4 h-4" />
+//           </button>
+//         </form>
 
-        {status && (
-          <div
-            className={`mt-4 text-center ${
-              status.includes("success") ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            <p>{status}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  </div>
+//         {status && (
+//           <div
+//             className={`mt-4 text-center ${
+//               status.includes("success") ? "text-green-400" : "text-red-400"
+//             }`}
+//           >
+//             <p>{status}</p>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   </div>
 
- <style>
-    {`
-      /* Card Glow */
-      @keyframes glow-card {
-        0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
-        50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
-      }
-      .glow-card { animation: glow-card 2.5s ease-in-out infinite; }
+//  <style>
+//     {`
+//       /* Card Glow */
+//       @keyframes glow-card {
+//         0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
+//         50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
+//       }
+//       .glow-card { animation: glow-card 2.5s ease-in-out infinite; }
 
-      /* Input Glow */
-      @keyframes glow-input {
-        0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.4);}
-        50%{box-shadow:0 0 20px rgba(14,165,233,0.7);}
-      }
-      .glow-input { animation: glow-input 3s ease-in-out infinite; }
+//       /* Input Glow */
+//       @keyframes glow-input {
+//         0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.4);}
+//         50%{box-shadow:0 0 20px rgba(14,165,233,0.7);}
+//       }
+//       .glow-input { animation: glow-input 3s ease-in-out infinite; }
 
-      /* Button Glow */
-      @keyframes glow-button {
-        0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
-        50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
-      }
-      .glow-button { animation: glow-button 2s ease-in-out infinite; }
+//       /* Button Glow */
+//       @keyframes glow-button {
+//         0%,100%{box-shadow:0 0 20px rgba(14,165,233,0.4);}
+//         50%{box-shadow:0 0 40px rgba(14,165,233,0.7);}
+//       }
+//       .glow-button { animation: glow-button 2s ease-in-out infinite; }
 
-      /* Individual small element glow */
-      @keyframes glow-element {
-        0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.3);}
-        50%{box-shadow:0 0 20px rgba(14,165,233,0.6);}
-      }
-      .glow-element { animation: glow-element 2.5s ease-in-out infinite; }
-    `}
-  </style>
+//       /* Individual small element glow */
+//       @keyframes glow-element {
+//         0%,100%{box-shadow:0 0 10px rgba(14,165,233,0.3);}
+//         50%{box-shadow:0 0 20px rgba(14,165,233,0.6);}
+//       }
+//       .glow-element { animation: glow-element 2.5s ease-in-out infinite; }
+//     `}
+//   </style>
 
 
 
   
-</section>
+// </section>
 
 
+       <section className="dk hero min-h-screen flex items-center relative">
+      <div className="container mx-auto">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-12 items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+        >
+          {/* Info Side */}
+          <motion.div
+            variants={fadeInUp}
+            className="space-y-8 glow-card p-6 rounded-3xl shadow-xl"
+          >
+            <div>
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Get in Touch
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Have a question or want to work together? Drop us a message!
+              </p>
+            </div>
+
+            <motion.div variants={fadeInUp} className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="bg-purple-500/10 p-3 rounded-lg glow-element">
+                  <Mail className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Email</h3>
+                  <p className="text-gray-400">deepakbisht@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="bg-pink-500/10 p-3 rounded-lg glow-element">
+                  <MapPin className="w-6 h-6 text-pink-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Location</h3>
+                  <p className="text-gray-400">India</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            variants={fadeInUp}
+            className="backdrop-blur-lg p-8 rounded-2xl shadow-xl glow-card"
+          >
+            <motion.form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+            >
+              <motion.div variants={fadeInUp} className="grid grid-cols-1 gap-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                      errors.name ? "border-red-500" : "border-gray-700"
+                    } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                      errors.email ? "border-red-500" : "border-gray-700"
+                    } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                      errors.subject ? "border-red-500" : "border-gray-700"
+                    } focus:border-blue-500 focus:outline-none transition-colors glow-input`}
+                    value={formData.subject}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
+                  />
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                  )}
+                </div>
+
+                <div>
+                  <textarea
+                    placeholder="Your Message"
+                    rows="4"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                      errors.message ? "border-red-500" : "border-gray-700"
+                    } focus:border-blue-500 focus:outline-none transition-colors resize-none glow-input`}
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                  ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  )}
+                </div>
+              </motion.div>
+
+              <motion.button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity glow-button"
+                variants={fadeInUp}
+              >
+                <span>Send Message</span>
+                <Send className="w-4 h-4" />
+              </motion.button>
+            </motion.form>
+
+            {status && (
+              <motion.div
+                variants={fadeInUp}
+                className={`mt-4 text-center ${
+                  status.includes("success") ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                <p>{status}</p>
+              </motion.div>
+            )}
+          </motion.div>
+        </motion.div>
+      </div>
       
+    </section>
  
   
 

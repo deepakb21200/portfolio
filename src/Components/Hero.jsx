@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import Illustration from "../assets/illustration.svg"
-import { NavHashLink } from "react-router-hash-link"
-import linkedin from '../assets/linkedin.svg'
-
-import githubIcon from '../assets/github.svg'
-import whatsapp from '../assets/whatsapp.svg'
+// import Illustration from "../assets/illustration.svg"
+// import { NavHashLink } from "react-router-hash-link"
+// import linkedin from '../assets/linkedin.svg'
+import deepak from "../assets/ed.jpg";
+// import githubIcon from '../assets/github.svg'
+// import whatsapp from '../assets/whatsapp.svg'
 import Hello from '../assets/Hello.gif'
-import telegram from '../assets/telegram.svg'
+// import telegram from '../assets/telegram.svg'
 import "./hero.css"
  
 
@@ -141,7 +141,7 @@ export default function Hero() {
       </button>
     </motion.div>
 
-    <motion.div
+    {/* <motion.div
       className="social-media"
       // variants={fadeInUp}
        variants={fadeInUp}
@@ -166,11 +166,11 @@ export default function Hero() {
       <a href="https://t.me/CodeVinayak" target="_blank" rel="noreferrer">
         <img src={telegram} alt="telegram" />
       </a>
-    </motion.div>
+    </motion.div> */}
   </div>
 
   <div className="hero-image ">
-    <motion.img
+    {/* <motion.img
       src={Illustration}
       alt="Ilustração"
       variants={fadeInRight}
@@ -178,7 +178,20 @@ export default function Hero() {
       whileInView="visible"
       viewport={{ once: false }}
       transition={{ duration: 0.6, delay: 1 }}
-    />
+    /> */}
+
+
+  <motion.img
+      src={deepak}
+      alt="Ilustração"
+      variants={fadeInRight}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      transition={{ duration: 0.6, delay: 1 }}
+    />  
+     {/* <img src={deepak} alt="Vinayak Singh" className="  ml-auto w-[50%] h-[500px]  bg-lime-400"/> */}
+           
   </div>
 </section>  
 

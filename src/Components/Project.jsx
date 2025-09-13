@@ -27,12 +27,12 @@ const flipInX = {
 export function Project() {
   return (
     <div   className="mt-[9.5rem]  ">
-      <h2 className="text-center   mb-[3rem]  ">My Projects</h2>
+      <h2 className="text-center text-[40px]  mb-[3rem]  ">My Projects</h2>
       <div className="projects    overflow-hidden">
 
  
         <motion.div variants={flipInX} initial="hidden" whileInView="visible" viewport={{ once: false }}>
-          <div className="project">
+          <div className="project  ">
             <header>
               <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                 <title>Folder</title>
@@ -90,8 +90,7 @@ export function Project() {
               <div className="project-links">
                 <a href="https://github.com/CodeVinayak/AI-Chatbot-Assistant" target="_blank" rel="noreferrer">
                   <img src={githubIcon} alt="Visit site" /> </a>
-                <a href="https://ai-chatbot-t8fn.onrender.com" target="_blank" rel="noreferrer">
-                  <img src={externalLink} alt="Visit site" /></a>
+                
               </div>
             </header>
             <div className="body">
@@ -121,9 +120,7 @@ export function Project() {
         <a href="https://github.com/CodeVinayak/MediBook-Medical-Appointment-Scheduler-with-Health-History" target="_blank" rel="noreferrer">
           <img src={githubIcon} alt="Visit site" />
         </a>
-        <a href="https://medibook.vinayaksingh.com" target="_blank" rel="noreferrer">
-          <img src={externalLink} alt="Visit site" />
-        </a>
+     
       </div>
     </header>
     <div className="body">
@@ -151,9 +148,7 @@ export function Project() {
         <a href="https://github.com/CodeVinayak/Real-Time-Hand-Gesture-Driven-3D-Object-Manipulation" target="_blank" rel="noreferrer">
           <img src={githubIcon} alt="Visit site" />
         </a>
-        <a href="https://youtu.be/NOm-3MynPLE" target="_blank" rel="noreferrer">
-          <img src={externalLink} alt="Visit site" />
-        </a>
+         
       </div>
     </header>
     <div className="body">
