@@ -5,9 +5,22 @@ const AnimationLottie = ({ animationPath, width }) => {
     loop: true,
     autoplay: true,
     animationData: animationPath,
-    style: {
-      width: '95%',
-    }
+      style: {
+ 
+        // height:"100%",
+        
+        
+        
+   
+        
+        
+       
+       
+        
+
+      },
+      className:"deepak"
+    
   };
 
   return (
@@ -16,3 +29,11 @@ const AnimationLottie = ({ animationPath, width }) => {
 };
 
 export default AnimationLottie;
+
+
+
+
+
+
+
+ 

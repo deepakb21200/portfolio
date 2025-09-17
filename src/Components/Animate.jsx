@@ -37,166 +37,20 @@ export default function Animate() {
 // style={{padding:"0px 6.3rem"}}
     
   return (
-    <div className="   relative overflow-x-hidden z-0 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24
+    // <div className="   relative overflow-x-hidden z-0 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24
+    
+    //  " >
+ <div className="   relative  overflow-x-hidden z-0 
     
      " >
-
-
-    
-    
-
-
-
-  {/* <Particles id="tsparticles"  options={{
-            "fullScreen": {
-              "enable": true,
-              "zIndex": 1
-            },
-            "detectRetina": true,
-            "fpsLimit": 60,
-            "interactivity": {
-              "events": {
-                "onClick": {
-                  "enable": true,
-                  "mode": "push"
-                },
-              
-                "onHover": {
-                  "enable": true,
-                  "mode": "bubble",
-                 
-                },
-                "resize": true
-              },
-              "modes": {
-                "bubble": {
-                  "distance": 100,
-                  "duration": 1,
-                  "opacity": 0.8,
-                  "size": 25,
-                },
-                
-            
-                "push": {
-                  "quantity": 2,
-                
-                },
-                
-                
-              }
-            },
-            "particles": {
-            
-              "move": {
-                "enable": true,
-                "outMode": "out",
-                "speed": 2,
-                "straight": false
-              },
-    
-              "number": {
-                "density": {
-                  "enable": true,
-                  "area": 800
-                },
-              
-                "value": 15,
-              },
-              "opacity": {
-                "animation": {
-                  "enable": true,
-                  "minimumValue": 0.2,
-                  "speed": 1,
-                  "sync": false
-                },
-                "random": true,
-                "value": 1
-              },
-              "rotate": {
-                "animation": {
-                  "enable": true,
-                  "speed": 10,
-                  "sync": false
-                },
-                "direction": "random",
-                "random": true,
-            
-              },
-              "shape": {
-                
-                "image": [
-                  
-                  
-             
-                  {
-                    "src": htmlIcon,
-                    "width": 20,
-                    "height": 20
-                  },
-                  {
-                    "src": jsIcon,
-                    "width": 20,
-                    "height": 20
-                  },
-                 
-                   
-                  {
-                    "src": reactIcon,
-                    "width": 20,
-                    "height": 20
-                  },
-                  
-                  
-                   {
-                    "src": gits,
-                    "width": 20,
-                    "height": 20
-                  },
-                   {
-                    "src": jsons,
-                    "width": 20,
-                    "height": 20
-                  },
-
-                   {
-                    "src": githubs,
-                    "width": 20,
-                    "height": 20
-                  },
-
-                    {
-                    "src": vites,
-                    "width": 20,
-                    "height": 20
-                  },
-
-                ],
-                
-                
-                "type": "image"
-              },
-              "size": {
-                 
-                "random": false,
-                "value": 16
-              }
-            },
-            
-            "background": {
-              "image": `url(${light})`,
-              "position": "50% 50%",
-              "repeat": "no-repeat",
-              "size": "cover"
-            }
-          }}   /> */}
 
   
 
 
 
           <Heroes/>
-       {/* <Hero/> */}
-        <About/>
+       {/* <Hero/>  */}
+          <About/>
      
  
         <Project/>

@@ -43,3 +43,25 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+
+
+
+.cube {
+  transform-style: preserve-3d;
+  transform: translateZ(-80px);
+}
+
+.cube-face {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  backface-visibility: hidden;
+}
+
+.cube-front  { transform: rotateY(0deg) translateZ(80px); }
+.cube-back   { transform: rotateY(180deg) translateZ(80px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(80px); }
+.cube-right  { transform: rotateY(90deg) translateZ(80px); }
+.cube-top    { transform: rotateX(90deg) translateZ(80px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(80px); }

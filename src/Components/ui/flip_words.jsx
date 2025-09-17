@@ -134,9 +134,9 @@ export const FlipWords = ({ words, duration = 3000, className = "" }) => {
           scale: 2,
           position: "absolute",
         }}
-        className={`z-10 inline-block relative text-left  dark:text-neutral-100 px-2 ${className}`}
+        className={`z-10 inline-block relative text-center  dark:text-neutral-100  ${className}`}
 
- 
+//  px-2
         key={currentWord}
       >
         {currentWord.split(" ").map((word, wordIndex) => (
@@ -145,7 +145,7 @@ export const FlipWords = ({ words, duration = 3000, className = "" }) => {
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ delay: wordIndex * 0.3, duration: 0.3 }}
-            className="inline-block whitespace-nowrap"
+            className="inline-block  sm:tracking-wider tracking-wide"
           >
             {word.split("").map((letter, letterIndex) => (
               <motion.span
@@ -166,6 +166,10 @@ export const FlipWords = ({ words, duration = 3000, className = "" }) => {
         ))}
       </motion.div>
     </AnimatePresence>
+
+
+
+        
   );
 };
 
