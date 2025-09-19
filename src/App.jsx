@@ -8,13 +8,14 @@ import Footer from './Components/Footer'
 
 export default function App() {
   return (
-    // <div className='w-full h-screen relative overflow-x-auto '>
-    <div className='w-full h-screen relative overflow-x-hidden overflow-y-auto'>
- {/* overflow-x-hidden */}
+ 
+    <div className="w-full min-h-screen relative overflow-x-hidden">
+
+ 
  <StarBackground/>
        <Header/>
        <Animate/>
-       <Footer/>
+       {/* <Footer/> */}
 
     
     </div>

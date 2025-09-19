@@ -1,120 +1,84 @@
-import React, { useEffect, useState } from "react";
-import SparklesText from "./ui/sparklestext";
+ 
+ 
 import { FlipWords } from "./ui/flip_words";
- import { motion, useAnimation} from "framer-motion";
+ import { motion, } from "framer-motion";
 import deepak from "../assets/ed.jpg";
-// const GridBackground = () => {
-
-
-
-//   return (
-//     <div className=" hello absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-//       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_0%,black)]">
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="100%"
-//           height="100%"
-//           className="absolute inset-0"
-//         >
-//           <pattern
-//             id="grid"
-//             width="40"
-//             height="40"
-//             patternUnits="userSpaceOnUse"
-//           >
-//             <rect
-//               width="40"
-//               height="40"
-//               fill="none"
-//               stroke="white"
-//               strokeWidth="0.5"
-//               className="opacity-40 animate-gridPulse"
-//             />
-//           </pattern>
-//           <rect width="100%" height="100%" fill="url(#grid)" />
-//         </svg>
-//       </div>
-//     </div>
-//   );
-// };
+import "./heroes.css"
 
 function Heroes() {
+ 
 
-//   const container = {
+
+// 🔹 Variants
+// const container = {
 //   hidden: { opacity: 0 },
 //   visible: {
 //     opacity: 1,
 //     transition: {
-//       staggerChildren: 0.3,  
-//       delayChildren: 0.2,    
+//       staggerChildren: 0.25,  
+//       delayChildren: 0.2,
 //     },
 //   },
 // };
 
-// const item = {
-//   hidden: { opacity: 0, y: 30 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-// };
-
-
-
-
-
-
-
-
-
-// 🔹 Variants
 const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.25, // text items ek ek karke aayenge
-      delayChildren: 0.2,
+      staggerChildren: 0.1,   // fast, smoother
+      delayChildren: 0.08,     
     },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
+
+// const item = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" },
+//   },
+// };
+
+ 
+// const imageItem = {
+//   hidden: { opacity: 0, scale: 0.9 },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
+//   },
+// };
+
+ const item = {
+  hidden: { opacity: 0, y: 12 }, // chhota movement, natural feel
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" }, // thoda fast
   },
 };
 
-// 🔹 Image ke liye alag variant
 const imageItem = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 }, // thoda subtle zoom
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
+    transition: { duration: 0.45, ease: "easeOut" }, // fast & smooth
   },
 };
 
+
+
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const words = [
     "MERN Stack Developer",
     "Frontend Enthusiast with React & Tailwind",
@@ -128,26 +92,32 @@ const imageItem = {
     <>
 
  
-<section className="relative min-h-screen flex items-center justify-center px-4 lg:px-[50px] pt-20 w-full
-transition-colors duration-300 text-white 
+<section className="relative min-h-screen flex items-center justify-center px-4 lg:px-[0px] pt-20  
+transition-colors duration-300 text-white  xl:w-[80%] md:w-full mx-auto
 " id="home">
 
 
 
 
 
-       <motion.div
+       {/* <motion.div
         className="max-w-7xl w-full flex flex-col-reverse lg:flex-row  lg:gap-20
       gap-y-[20px]
-      items-center
- 
-
-    
-         
+      items-center   
         "
         variants={container}
-        // initial="hidden"
-        // animate="visible"
+ 
+         initial="hidden"
+        whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+      > */}
+        <motion.div
+        className="w-full flex flex-col-reverse lg:flex-row  lg:gap-20
+      gap-y-[20px]
+      items-center   
+        "
+        variants={container}
+ 
          initial="hidden"
         whileInView="visible"
   viewport={{ once: false, amount: 0.2 }}
@@ -227,10 +197,10 @@ transition-colors duration-300 text-white
             <img
               src={deepak}
               alt="Deepak Bisht"
-              className="  object-fill block w-[360px]  
+              className="  object-fill block w-[360px]  media-object 
               h-auto  
              "
-            />
+       />
           </div>
         </motion.div>
       </motion.div>  

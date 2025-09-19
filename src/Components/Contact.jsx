@@ -404,7 +404,10 @@ export default function Contact( ) {
 
     // Create a new FormData object to send to Web3Forms API
     const form = new FormData();
-    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // Replace with your Web3Forms access key
+    // form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703");  Replace with your Web3Forms access 
+    // key
+
+     form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703");     
     form.append("name", formData.name);
     form.append("email", formData.email);
     form.append("subject", formData.subject || "New Contact Form Submission");
@@ -449,9 +452,9 @@ export default function Contact( ) {
 
 
 
-     <section className="dk hero min-h-screen flex items-center relative" id="contact">
-      <div className="container mx-auto ">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+     <section className="dk hero min-h-screen flex items-center relative   " id="contact">
+      <div className=" w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center ">
 
       
           <motion.div 
@@ -459,7 +462,7 @@ export default function Contact( ) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-            className="space-y-8 glow-card p-6 rounded-3xl shadow-xl   text-center lg:text-left"
+            className="space-y-8 glow-card  rounded-3xl shadow-xl   text-center lg:text-left"
           >
             <div>
               <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
@@ -522,7 +525,8 @@ export default function Contact( ) {
             initial="hidden"
             whileInView="visible"
             viewport={{  once: false }}
-            className="backdrop-blur-lg p-8 rounded-2xl shadow-xl glow-card"
+            className="backdrop-blur-lg p-[16px] md:p-[24px] lg:p-[32px] rounded-2xl shadow-xl glow-card border-[skyblue]   border-[2px]
+             "
           >
             <motion.form 
               onSubmit={handleSubmit} 
@@ -537,7 +541,7 @@ export default function Contact( ) {
                 {/* Input fields */}
                 <motion.div variants={inputItem}  >
                   <input type="text" placeholder="Your Name"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? "border-red-500" : "border-gray-700"} focus:border-[#FFA800] focus:outline-none transition-colors glow-input`}
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? "border-red-500" : "border-gray-700"} focus:border-[skyblue]  focus:outline-none transition-colors glow-input`}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
@@ -551,7 +555,7 @@ export default function Contact( ) {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   /> */}
  <input type="email" placeholder="Your Email"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? "border-red-500" : "border-gray-700"} focus:border-[#FFA800] focus:outline-none transition-colors  `}
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? "border-red-500" : "border-gray-700"} focus:border-[skyblue] focus:outline-none transition-colors  `}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -562,7 +566,7 @@ export default function Contact( ) {
 
                 <motion.div variants={inputItem}   >
                   <input type="text" placeholder="Subject"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.subject ? "border-red-500" : "border-gray-700"} focus:border-[#FFA800] focus:outline-none transition-colors glow-input`}
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.subject ? "border-red-500" : "border-gray-700"} focus:border-[skyblue]  focus:outline-none transition-colors glow-input`}
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   />
@@ -571,7 +575,7 @@ export default function Contact( ) {
 
                 <motion.div variants={inputItem} >
                   <textarea placeholder="Your Message" rows="4"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? "border-red-500" : "border-gray-700"} focus:border-[#FFA800] focus:outline-none transition-colors resize-none glow-input`}
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? "border-red-500" : "border-gray-700"} focus:border-[skyblue]  focus:outline-none transition-colors resize-none glow-input`}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   ></textarea>

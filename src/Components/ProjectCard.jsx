@@ -4,21 +4,20 @@ import githubIcon from "../assets/github.svg";
 import "./project.css"
 import { useEffect, useRef, useState } from "react";
  
+ 
 
-  const flipInX = {
+const flipInX = {
   hidden: {
     rotateX: 90,
     opacity: 0,
-    // transformPerspective: 400,
     transformPerspective: 800,
   },
   visible: {
-    rotateX: [90, -20, 10, -5, 0],
+    rotateX: [90, -25, 10, -5, 0],
     opacity: [0, 1, 1, 1, 1],
     transition: {
-      duration: 1,
+      duration: 1.2,
       times: [0, 0.4, 0.6, 0.8, 1],
-      // ease: "easeIn",
       ease: "easeInOut",
     },
   },
@@ -81,8 +80,7 @@ export default function ProjectCard({ title, desc, link, tech , videoUrl}) {
 
         {/* External link commented out */}
       </div>
-        <video
-                        ref={videoRef}
+        {/* <video ref={videoRef}
                         className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 transform ${isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-95'}`}
                         // src={projects.videoUrl}
                          src={videoUrl}
@@ -90,7 +88,23 @@ export default function ProjectCard({ title, desc, link, tech , videoUrl}) {
                         loop
                         playsInline
                         preload="metadata"
-                    />
+                    /> */}
+
+
+          <video
+  ref={videoRef}
+  className={`absolute inset-0 w-full h-full object-cover
+    transition-opacity transition-transform duration-500
+    ${isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-95'}`}
+  src={videoUrl}
+  muted
+  loop
+  playsInline
+  preload="none"          // 👈 don’t preload
+  poster="/thumbnail.jpg" // 👈 show image before play
+  loading="lazy"          // 👈 try lazy load
+/>
+
    </header>
     <div className="body">
            <h3>{title}</h3>
@@ -107,5 +121,9 @@ export default function ProjectCard({ title, desc, link, tech , videoUrl}) {
      </footer>
    </div>
          </motion.div>
+
+ 
+
+
   );
 }
